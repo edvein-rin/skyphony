@@ -1,8 +1,16 @@
 {
   "name": "skyphony",
-  "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy": "gp-paged -d build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -11,21 +19,57 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
-    "@types/react-redux": "^7.1.7",
+    "@types/react-redux": "^7.1.18",
+    "immutable": "^4.0.0-rc.14",
+    "normalize.css": "^8.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.0",
     "react-scripts": "4.0.3",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "styled-components": "^5.3.0",
     "typescript": "~4.1.5"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "airbnb-typescript",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:import/recommended",
+      "plugin:import/typescript"
+    ],
+    "rules": {
+      "semi": 0,
+      "jsx-quotes": "off",
+      "object-curly-newline": "off",
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".tsx"
+          ]
+        }
+      ],
+      "react/jsx-props-no-spreading": 0,
+      "react/react-in-jsx-scope": 0,
+      "react/jsx-wrap-multilines": 0,
+      "react/jsx-one-expression-per-line": 0,
+      "import/extensions": 0,
+      "import/no-unresolved": 0,
+      "no-multiple-empty-lines": 0,
+      "linebreak-style": "off",
+      "@typescript-eslint/no-use-before-define": "off",
+      "@typescript-eslint/semi": "off",
+      "@typescript-eslint/comma-dangle": "off",
+      "@typescript-eslint/indent": "off"
+    },
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    }
   },
   "browserslist": {
     "production": [
@@ -38,5 +82,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/material-ui": "^0.21.9",
+    "@types/react-router-dom": "^5.1.8",
+    "@types/redux": "^3.6.0",
+    "@types/styled-components": "^5.1.11",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "gh-pages": "^3.2.3"
   }
 }
