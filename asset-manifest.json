@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/static/js/main.3ecaeee5.chunk.js",
-    "main.js.map": "/static/js/main.3ecaeee5.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6dc1dc5a.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6dc1dc5a.js.map",
-    "static/js/2.cdeccaf5.chunk.js": "/static/js/2.cdeccaf5.chunk.js",
-    "static/js/2.cdeccaf5.chunk.js.map": "/static/js/2.cdeccaf5.chunk.js.map",
-    "index.html": "/index.html",
-    "static/js/2.cdeccaf5.chunk.js.LICENSE.txt": "/static/js/2.cdeccaf5.chunk.js.LICENSE.txt",
-    "static/media/logo.099d5216.svg": "/static/media/logo.099d5216.svg"
+    "main.js": "/skyphony/static/js/main.3ecaeee5.chunk.js",
+    "main.js.map": "/skyphony/static/js/main.3ecaeee5.chunk.js.map",
+    "runtime-main.js": "/skyphony/static/js/runtime-main.002f2d5c.js",
+    "runtime-main.js.map": "/skyphony/static/js/runtime-main.002f2d5c.js.map",
+    "static/js/2.d4c145a1.chunk.js": "/skyphony/static/js/2.d4c145a1.chunk.js",
+    "static/js/2.d4c145a1.chunk.js.map": "/skyphony/static/js/2.d4c145a1.chunk.js.map",
+    "index.html": "/skyphony/index.html",
+    "static/js/2.d4c145a1.chunk.js.LICENSE.txt": "/skyphony/static/js/2.d4c145a1.chunk.js.LICENSE.txt",
+    "static/media/logo.099d5216.svg": "/skyphony/static/media/logo.099d5216.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6dc1dc5a.js",
-    "static/js/2.cdeccaf5.chunk.js",
+    "static/js/runtime-main.002f2d5c.js",
+    "static/js/2.d4c145a1.chunk.js",
     "static/js/main.3ecaeee5.chunk.js"
   ]
 }
