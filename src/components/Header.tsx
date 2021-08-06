@@ -1,6 +1,5 @@
 import styled from 'styled-components/macro'
-import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core'
-import { Menu as MenuIcon } from '@material-ui/icons'
+import { AppBar, Toolbar, Typography } from '@material-ui/core'
 
 import logo from '../assets/logo.svg'
 
@@ -10,9 +9,6 @@ export default function Header() {
       <Toolbar>
         <Logo alt='Skyphony' src={logo} height={20} />
         <Title variant='h6'>Skyphony</Title>
-        <IconButton edge='start'>
-          <MenuIcon />
-        </IconButton>
       </Toolbar>
     </AppBar>
   )
