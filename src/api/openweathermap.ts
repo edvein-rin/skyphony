@@ -4,9 +4,13 @@ import {
   request,
   Options,
   API,
-  Place,
-  City,
+  LocationName,
+  isLocationName,
   Coords,
+  isCoords,
+  City,
+  isCity,
+  Location,
   Weather,
   Forecast,
 } from './api'
@@ -25,8 +29,8 @@ export default class OpenWeatherMapAPI implements API {
     return request(this.url + service, options.set('appid', this.key))
   }
 
-  async getCoords(city: City): Promise<Coords> {
-    const response = await this.call('geo/1.0/direct', Map({ q: city }))
+  async getCoords(locationName: LocationName): Promise<Coords> {
+    const response = await this.call('geo/1.0/direct', Map({ q: locationName }))
     const data = await response.json()
 
     const firstCity = data[0]
@@ -38,11 +42,16 @@ export default class OpenWeatherMapAPI implements API {
     return coords
   }
 
-  async getWeather(place: Place): Promise<Weather> {
-    const isCity = typeof place === 'string'
-    const coords: Coords = isCity
-      ? await this.getCoords(place as string)
-      : (place as Coords)
+  async getWeather(location: Location): Promise<Weather> {
+    const coords: Coords = await (async (): Promise<Coords> => {
+      if (isCoords(location)) return location as Coords
+      if (isCity(location)) return (location as City).coords
+      if (isLocationName(location)) {
+        return this.getCoords(location as LocationName)
+      }
+
+      throw Error('Unknown location type')
+    })()
 
     const response = await this.call(
       'data/2.5/onecall',

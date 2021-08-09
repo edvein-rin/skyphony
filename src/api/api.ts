@@ -33,15 +33,32 @@ export interface Weather {
   daily: Forecast[]
 }
 
-export type City = string
+export type LocationName = string
+export const isLocationName = (object: any): boolean =>
+  typeof object === 'string'
+
 export interface Coords {
   lat: number
   lon: number
 }
-export type Place = City | Coords
+export function isCoords(object: any): boolean {
+  return 'lat' in object && 'lon' in object
+}
+
+export interface City {
+  name: string
+  coords: Coords
+}
+export function isCity(object: any): boolean {
+  return 'name' in object && 'coords' in object
+}
+
+export type Location = LocationName | Coords | City
+export const isLocation = (object: any): boolean =>
+  isLocationName(object) || isCoords(object) || isCity(object)
 
 export interface API {
-  getWeather(place: Place): Promise<Weather>
+  getWeather(location: Location): Promise<Weather>
 }
 
 export type Options = Map<string, any>
