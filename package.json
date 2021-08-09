@@ -66,7 +66,8 @@
       "@typescript-eslint/no-use-before-define": "off",
       "@typescript-eslint/semi": "off",
       "@typescript-eslint/comma-dangle": "off",
-      "@typescript-eslint/indent": "off"
+      "@typescript-eslint/indent": "off",
+      "@typescript-eslint/lines-between-class-members": "off"
     },
     "parserOptions": {
       "project": "./tsconfig.json"
