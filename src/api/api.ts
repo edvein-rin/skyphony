@@ -1,25 +1,39 @@
 import { Map } from 'immutable'
 
+export type Dict<T> = {
+  [key: string]: T
+}
+
+export interface TemperatureRange extends Dict<number> {
+  morning: number
+  day: number
+  evening: number
+  night: number
+  min: number
+  max: number
+}
+export function isTemperatureRange(object: any): boolean {
+  return (
+    'morning' in object &&
+    'day' in object &&
+    'evening' in object &&
+    'night' in object &&
+    'min' in object &&
+    'max' in object
+  )
+}
+
+export interface FeelsLikeRange extends Dict<number> {
+  morning: number
+  day: number
+  evening: number
+  night: number
+}
+
 export interface Forecast {
   time: number
-  temperature:
-    | number
-    | {
-        morning: number
-        day: number
-        evening: number
-        night: number
-        min: number
-        max: number
-      }
-  feelsLike:
-    | number
-    | {
-        morning: number
-        day: number
-        evening: number
-        night: number
-      }
+  temperature: number
+  feelsLike: number
   windSpeed: number
   windDegree: number
   humidity: number
@@ -27,10 +41,18 @@ export interface Forecast {
   fullDescription?: string
   icon?: string
 }
+export type CurrentForecast = Forecast
+export type HourlyForecast = Forecast
+export interface DailyForecast
+  extends Omit<Forecast, 'temperature' | 'feelsLike'> {
+  temperature: TemperatureRange
+  feelsLike: FeelsLikeRange
+}
+
 export interface Weather {
   current: Forecast
-  hourly: Forecast[]
-  daily: Forecast[]
+  hourly: HourlyForecast[]
+  daily: DailyForecast[]
 }
 
 export type LocationName = string
