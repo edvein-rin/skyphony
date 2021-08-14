@@ -9,12 +9,20 @@ const root: Reducer = (
   const newState: State = state
 
   switch (action.type) {
-    case 'loadWeather':
+    case 'updateWeather':
       newState.weather = action.weather
       return newState
 
+    case 'updateCity':
+      newState.city = action.city
+      return newState
+
     default:
-      throw Error('Unknown action type')
+      // if action is meant to be handled
+      if (!action.type.startsWith('@@')) {
+        throw Error(`Unknown action type: ${action.type}`)
+      }
+      return newState
   }
 }
 
