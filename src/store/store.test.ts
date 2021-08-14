@@ -22,7 +22,7 @@ describe('Store', () => {
     expect(weatherSelector(store.getState())).toBeDefined()
   })
 
-  it.only('updates city', async () => {
+  it('updates city', async () => {
     const cityExpected: City = {
       coords: {
         lat: 51.5085,
