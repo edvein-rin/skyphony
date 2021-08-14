@@ -14,6 +14,7 @@ export interface TemperatureRange extends Dict<number> {
 }
 export function isTemperatureRange(object: any): boolean {
   return (
+    typeof object === 'object' &&
     'morning' in object &&
     'day' in object &&
     'evening' in object &&
@@ -64,7 +65,7 @@ export interface Coords {
   lon: number
 }
 export function isCoords(object: any): boolean {
-  return 'lat' in object && 'lon' in object
+  return typeof object === 'object' && 'lat' in object && 'lon' in object
 }
 
 export interface City {
@@ -72,7 +73,7 @@ export interface City {
   coords: Coords
 }
 export function isCity(object: any): boolean {
-  return 'name' in object && 'coords' in object
+  return typeof object === 'object' && 'name' in object && 'coords' in object
 }
 
 export type Location = LocationName | Coords | City
@@ -81,6 +82,7 @@ export const isLocation = (object: any): boolean =>
 
 export interface API {
   getWeather(location: Location): Promise<Weather>
+  getCoords(location: LocationName): Promise<Coords>
 }
 
 export type Options = Map<string, any>
