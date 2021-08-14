@@ -11,6 +11,7 @@ const root: Reducer = (
   switch (action.type) {
     case 'updateWeather':
       newState.weather = action.weather
+      newState.lastWeatherUpdateTime = Date.now()
       return newState
 
     case 'updateCity':

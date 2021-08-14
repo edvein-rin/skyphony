@@ -5,7 +5,7 @@ export default interface State {
   api: API
   city?: City
   weather?: Weather
-  lastUpdateTime?: number
+  lastWeatherUpdateTime?: number
 }
 
 export const defaultState = {
