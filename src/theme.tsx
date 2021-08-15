@@ -8,11 +8,15 @@ const theme = responsiveFontSizes(
         contrastText: '#48484a',
       },
       secondary: {
-        main: '#c1cdc0',
+        main: '#ea6e4b',
+        contrastText: '#fff',
       },
       background: {
         default: '#48484a',
       },
+    },
+    shape: {
+      borderRadius: 4,
     },
   })
 )
